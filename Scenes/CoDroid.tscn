@@ -1,0 +1,105 @@
+[gd_scene load_steps=17 format=3 uid="uid://dwgxwksr4vu51"]
+
+[ext_resource type="Texture2D" uid="uid://bmb46vpxmmv8l" path="res://UI/Mainbach.png" id="1_cbobh"]
+[ext_resource type="Script" path="res://Scripts/CoDroid.gd" id="1_cl65h"]
+[ext_resource type="Texture2D" uid="uid://bekku2ooiqqw8" path="res://UI/CoDroid_UI/nav_bar.png" id="2_qkhlo"]
+[ext_resource type="Texture2D" uid="uid://ciry85xrmhnup" path="res://UI/CoDroid_UI/mage_robot-wink.png" id="3_b31ng"]
+[ext_resource type="Texture2D" uid="uid://dlb0g57rqke06" path="res://UI/Settings_UI/tabler_home.png" id="6_tp84v"]
+[ext_resource type="Script" path="res://Scripts/TablerHome.gd" id="7_fueq4"]
+[ext_resource type="Texture2D" uid="uid://bympotochsevm" path="res://UI/Home_UI/solar_settings-linear.png" id="8_ob32e"]
+[ext_resource type="Script" path="res://Scripts/SolarSettings-linear.gd" id="9_8rv3m"]
+[ext_resource type="Texture2D" uid="uid://beti5enfmciof" path="res://UI/Settings_UI/streamline_help-chat-2.png" id="9_ncrdv"]
+[ext_resource type="Texture2D" uid="uid://q87kodpllx04" path="res://UI/CoDroid_UI/icon_robot.png" id="9_wgu8y"]
+[ext_resource type="Script" path="res://Scenes/StreamlineHelp-chat-2.gd" id="10_21mco"]
+[ext_resource type="Texture2D" uid="uid://dej7f7lb4lehy" path="res://UI/CoDroid_UI/Привет, я CoDroid!.png" id="11_srbo5"]
+[ext_resource type="Texture2D" uid="uid://nr2jnc2r28hm" path="res://UI/CoDroid_UI/Чем тебе помочь_.png" id="12_mfd36"]
+[ext_resource type="Texture2D" uid="uid://c4fdw6onewc8s" path="res://UI/CoDroid_UI/test-1.png" id="13_3jxl0"]
+[ext_resource type="Texture2D" uid="uid://cx3fhd05jo6ov" path="res://UI/CoDroid_UI/test-2.png" id="14_5g7sc"]
+[ext_resource type="Texture2D" uid="uid://co5aoxrhmvne4" path="res://UI/CoDroid_UI/test.png" id="15_2i8v7"]
+
+[node name="CoDroid" type="Node2D"]
+script = ExtResource("1_cl65h")
+
+[node name="Mainbach" type="Sprite2D" parent="."]
+position = Vector2(222, 475)
+scale = Vector2(1.22897, 1.10799)
+texture = ExtResource("1_cbobh")
+
+[node name="NavBar" type="Sprite2D" parent="."]
+position = Vector2(215, 881)
+scale = Vector2(1.00467, 1)
+texture = ExtResource("2_qkhlo")
+
+[node name="MageRobot-wink" type="Sprite2D" parent="NavBar"]
+position = Vector2(49.7675, -24)
+scale = Vector2(0.995349, 1)
+texture = ExtResource("3_b31ng")
+
+[node name="TablerHome" type="Sprite2D" parent="NavBar"]
+position = Vector2(-144.488, 12)
+scale = Vector2(0.995349, 1)
+texture = ExtResource("6_tp84v")
+script = ExtResource("7_fueq4")
+
+[node name="Home_button" type="TextureButton" parent="NavBar/TablerHome"]
+offset_left = -68.0
+offset_top = -36.0
+offset_right = 49.0
+offset_bottom = 37.0
+metadata/_edit_use_anchors_ = true
+
+[node name="SolarSettings-linear2" type="Sprite2D" parent="NavBar"]
+position = Vector2(147.963, 12)
+scale = Vector2(0.933459, 0.9)
+texture = ExtResource("8_ob32e")
+script = ExtResource("9_8rv3m")
+
+[node name="Settings_button" type="TextureButton" parent="NavBar/SolarSettings-linear2"]
+offset_left = -49.0
+offset_top = -42.0
+offset_right = 62.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="StreamlineHelp-chat-2" type="Sprite2D" parent="NavBar"]
+position = Vector2(-45, 12)
+scale = Vector2(0.993041, 1)
+texture = ExtResource("9_ncrdv")
+script = ExtResource("10_21mco")
+
+[node name="helps_button" type="TextureButton" parent="NavBar/StreamlineHelp-chat-2"]
+offset_left = -43.0
+offset_top = -37.0
+offset_right = 40.0
+offset_bottom = 37.0
+metadata/_edit_use_anchors_ = true
+
+[node name="IconRobot" type="Sprite2D" parent="."]
+position = Vector2(-163, 85)
+texture = ExtResource("9_wgu8y")
+
+[node name="Привет,ЯCoDroid!" type="Sprite2D" parent="."]
+position = Vector2(312, 71)
+texture = ExtResource("11_srbo5")
+
+[node name="ЧемТебеПомочь" type="Sprite2D" parent="."]
+position = Vector2(155, 198)
+texture = ExtResource("12_mfd36")
+
+[node name="what_can_help" type="Node2D" parent="."]
+
+[node name="help_task" type="Sprite2D" parent="what_can_help"]
+position = Vector2(218, 416)
+texture = ExtResource("13_3jxl0")
+
+[node name="top_of_game" type="Sprite2D" parent="what_can_help"]
+position = Vector2(218, 529)
+texture = ExtResource("14_5g7sc")
+
+[node name="raiting" type="Sprite2D" parent="what_can_help"]
+position = Vector2(218, 300)
+texture = ExtResource("15_2i8v7")
+
+[connection signal="pressed" from="NavBar/TablerHome/Home_button" to="NavBar/TablerHome" method="_on_home_button_pressed"]
+[connection signal="pressed" from="NavBar/SolarSettings-linear2/Settings_button" to="NavBar/SolarSettings-linear2" method="_on_settings_button_pressed"]
+[connection signal="pressed" from="NavBar/StreamlineHelp-chat-2/helps_button" to="NavBar/StreamlineHelp-chat-2" method="_on_helps_button_pressed"]

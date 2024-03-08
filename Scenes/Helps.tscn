@@ -1,0 +1,119 @@
+[gd_scene load_steps=11 format=3 uid="uid://4x3ari45ucgq"]
+
+[ext_resource type="Texture2D" uid="uid://bmb46vpxmmv8l" path="res://UI/Mainbach.png" id="1_k0jhj"]
+[ext_resource type="Texture2D" uid="uid://31hu4dj6tju3" path="res://UI/Helps_UI/nav_bar.png" id="2_77chm"]
+[ext_resource type="Texture2D" uid="uid://ba4n1leu07jec" path="res://UI/Helps_UI/streamline_hellp-chat-2.png" id="3_ndmjm"]
+[ext_resource type="Texture2D" uid="uid://dlb0g57rqke06" path="res://UI/Settings_UI/tabler_home.png" id="4_8m3eg"]
+[ext_resource type="Script" path="res://Scripts/TablerHome.gd" id="5_lowmw"]
+[ext_resource type="Texture2D" uid="uid://bympotochsevm" path="res://UI/Home_UI/solar_settings-linear.png" id="6_jeira"]
+[ext_resource type="Script" path="res://Scripts/SolarSettings-linear.gd" id="7_pv8tq"]
+[ext_resource type="Texture2D" uid="uid://dfmdj7kbbepd" path="res://UI/Home_UI/mage_robot-wink.png" id="8_78hem"]
+[ext_resource type="Script" path="res://Scripts/MageRobot-wink.gd" id="9_lim4h"]
+[ext_resource type="Texture2D" uid="uid://fh854meqyrl" path="res://UI/Helps_UI/Помощь.png" id="10_ihpg7"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Mainbach" type="Sprite2D" parent="."]
+position = Vector2(219, 475.5)
+scale = Vector2(1.04206, 1.027)
+texture = ExtResource("1_k0jhj")
+
+[node name="NavBar" type="Sprite2D" parent="."]
+position = Vector2(215, 881)
+scale = Vector2(1.00467, 1)
+texture = ExtResource("2_77chm")
+
+[node name="StreamlineHellp-chat-2" type="Sprite2D" parent="NavBar"]
+position = Vector2(-47.7769, -17)
+scale = Vector2(0.995352, 1)
+texture = ExtResource("3_ndmjm")
+
+[node name="helps_button" type="TextureButton" parent="NavBar/StreamlineHellp-chat-2"]
+offset_left = -40.1103
+offset_top = -8.0
+offset_right = 42.8897
+offset_bottom = 66.0
+metadata/_edit_use_anchors_ = true
+
+[node name="TablerHome" type="Sprite2D" parent="NavBar"]
+position = Vector2(-144.488, 12)
+scale = Vector2(0.995349, 1)
+texture = ExtResource("4_8m3eg")
+script = ExtResource("5_lowmw")
+
+[node name="Home_button" type="TextureButton" parent="NavBar/TablerHome"]
+offset_left = -68.0
+offset_top = -36.0
+offset_right = 49.0
+offset_bottom = 37.0
+metadata/_edit_use_anchors_ = true
+
+[node name="SolarSettings-linear2" type="Sprite2D" parent="NavBar"]
+position = Vector2(147.963, 12)
+scale = Vector2(0.933459, 0.9)
+texture = ExtResource("6_jeira")
+script = ExtResource("7_pv8tq")
+
+[node name="Settings_button" type="TextureButton" parent="NavBar/SolarSettings-linear2"]
+offset_left = -49.0
+offset_top = -42.0
+offset_right = 62.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="MageRobot-wink" type="Sprite2D" parent="NavBar"]
+position = Vector2(52.134, 12)
+scale = Vector2(1.01028, 1.022)
+texture = ExtResource("8_78hem")
+script = ExtResource("9_lim4h")
+
+[node name="CoDroid_button" type="TextureButton" parent="NavBar/MageRobot-wink"]
+offset_left = -72.0
+offset_top = -36.0
+offset_right = 47.0
+offset_bottom = 37.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Помощь" type="Sprite2D" parent="."]
+position = Vector2(90, 54)
+texture = ExtResource("10_ihpg7")
+
+[node name="Scroll_helps" type="RichTextLabel" parent="."]
+modulate = Color(0.282353, 0.282353, 0.282353, 1)
+offset_left = 9.0
+offset_top = 107.0
+offset_right = 429.0
+offset_bottom = 821.0
+text = "Наши сотрудники
+«Ростелеком» — один из крупнейших работодателей страны, в компании работает более 120 тысяч сотрудников, и каждый играет важную роль в достижении общего успеха.
+
+Много лет компания успешно внедряет практики устойчивого развития бизнеса и использует высокие технологии для обучения сотрудников и клиентов, защиты окружающей среды и повышения благосостояния в обществе.
+
+Компания предоставляет своим сотрудникам комфортные условия работы и создает возможности для развития и самореализации. Мы предлагаем справедливую оплату труда, дополнительные меры социальной защиты, безопасные условия работы. Большое внимание в компании уделяется равным правам. Ростелеком» входит в индекс гендерного равенства Bloomberg и это не случайно: около половины наших коллег — женщины, играющие большую роль в том числе и на всех уровнях управленческой вертикали компании.
+
+Инвестиции в развитие человеческого капитала являются одним из приоритетов компании. В «Ростелекоме» действует несколько программ по мотивации и развитию персонала, адаптации молодых специалистов. Компания предоставляет своим работникам широкий выбор обучающих программ и способствует повышению производительности, улучшая условия труда и реализуя программы социальной поддержки и цифровизации рабочих процессов. Так, в компании организована система обучения, основными компонентами которой являются корпоративный университет, институт внутренних тренеров и корпоративная система дистанционного обучения.
+
+Для новичков действует система наставничества и адаптации. Развита система карьерного планирования, работает программа «Кадровый резерв», которая дает возможность подобрать персонал за счет внутренних ресурсов. Каждый сотрудник при помощи современных краудсорсинговых платформ может принять участие в совместном поиске решений и предложить собственную идею оптимизации бизнес-процессов.
+
+Мы заинтересованы в привлечении молодых и талантливых кадров. В ряде ведущих вузов страны созданы базовые кафедры «Ростелекома», осуществляющие подготовку специалистов по программам, разработанным при участии компании. Ежегодно «Ростелеком» организует практику для студентов вузов с целью их последующего трудоустройства.
+
+Компания стремится к тому, чтобы достижения сотрудников оценивались по заслугам, а работа в «Ростелекоме», помимо дохода, приносила удовлетворение и чувство уверенности в завтрашнем дне.
+
+Для наших сотрудников действуют льготные корпоративные тарифы на услуги связи, реализуются программы детского отдыха, санаторно-курортного лечения, запущена программа поддержки сотрудников при решении жилищных проблем.
+
+Одними из первых в России «Ростелеком» начал системно помогать сокращенным работникам. Им оказывается всесторонняя поддержка на всех этапах, в том числе в поиске новой работы в других подразделениях при наличии вакансий и даже в других компаниях.
+
+КЦ_игры.jpgДля того чтобы компания развивалась и шла вперед, мы строим сильную корпоративную культуру и команду, в которой люди хорошо понимают друг друга на всех уровнях. «Ростелеком» прошел непростой путь интеграции из отдельных региональных компаний в национального оператора связи. За несколько лет мы сообща выработали и внедрили единые корпоративные ценности и стандарты.
+
+Сегодня в основе корпоративной культуры «Ростелекома» лежат два стратегических принципа: эффективность и клиентоориентированность. Они нашли свое отражение в Кодексе корпоративного поведения сотрудников компании. Пять корпоративных ценностей (открытость, ответственность, профессионализм, инновационность и преемственность) помогают нам выстраивать внутреннее взаимодействие, завоевывать доверие наших клиентов и партнеров.
+
+Для нас важно, чтобы людям нравилось работать на благо компании. Поэтому ежегодно во всех регионах и функциональных подразделениях «Ростелекома» проводится исследование уровня удовлетворенности сотрудников, результаты которого учитываются при планировании HR-проектов в сфере мотивации, развития и обучения персонала.
+
+Компания живет насыщенной корпоративной жизнью. Мы проводим конкурсы профессионального мастерства, творческие состязания, спортивные турниры и спартакиады, вместе отдыхаем и путешествуем, принимаем активное участие в волонтерских проектах.
+
+«Ростелеком» ассоциирует себя со всей историей российской отрасли коммуникаций начиная с момента ее зарождения, во многих региональных филиалах работают музеи связи. Самый главный корпоративный праздник — День рождения компании, который мы отмечаем 25 сентября. Именно в этот день в 1881 году был сделан первый шаг к появлению телефонной связи в нашей стране, и по приказу императора Александра III утверждены «Основные условия устройства и эксплуатации городских телефонных сообщений». 
+"
+
+[connection signal="pressed" from="NavBar/TablerHome/Home_button" to="NavBar/TablerHome" method="_on_home_button_pressed"]
+[connection signal="pressed" from="NavBar/SolarSettings-linear2/Settings_button" to="NavBar/SolarSettings-linear2" method="_on_settings_button_pressed"]
+[connection signal="pressed" from="NavBar/MageRobot-wink/CoDroid_button" to="NavBar/MageRobot-wink" method="_on_co_droid_button_pressed"]

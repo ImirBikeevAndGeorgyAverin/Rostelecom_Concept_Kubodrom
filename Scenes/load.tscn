@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://0vnc0apnpfsr"]
+
+[ext_resource type="Texture2D" uid="uid://ccgqo6h1b1ubo" path="res://UI/Loader_UI/Load_screen.png" id="1_pbkpg"]
+[ext_resource type="Texture2D" uid="uid://ckyl72341u0a3" path="res://UI/Loader_UI/tabler_loader-2.png" id="2_ro3gs"]
+[ext_resource type="Script" path="res://Scripts/TablerLoader-2.gd" id="3_om0aa"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="LoadScreen" type="Sprite2D" parent="."]
+position = Vector2(215, 467)
+texture = ExtResource("1_pbkpg")
+
+[node name="TablerLoader-2" type="Sprite2D" parent="."]
+position = Vector2(213, 460)
+texture = ExtResource("2_ro3gs")
+script = ExtResource("3_om0aa")

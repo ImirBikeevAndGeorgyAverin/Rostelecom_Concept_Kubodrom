@@ -1,0 +1,83 @@
+[gd_scene load_steps=13 format=3 uid="uid://5jhffnbf16ls"]
+
+[ext_resource type="Texture2D" uid="uid://bmb46vpxmmv8l" path="res://UI/Mainbach.png" id="1_0yqj0"]
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_lfth1"]
+[ext_resource type="Texture2D" uid="uid://dwn5xfybwyfgq" path="res://UI/Home_UI/Group 1.png" id="2_bbi3j"]
+[ext_resource type="Texture2D" uid="uid://dh7oh73qkwwbj" path="res://UI/Home_UI/tabler_home.png" id="3_tr1v1"]
+[ext_resource type="Texture2D" uid="uid://dfmdj7kbbepd" path="res://UI/Home_UI/mage_robot-wink.png" id="4_v2l0n"]
+[ext_resource type="Script" path="res://Scripts/MageRobot-wink.gd" id="5_5nj5q"]
+[ext_resource type="Texture2D" uid="uid://bympotochsevm" path="res://UI/Home_UI/solar_settings-linear.png" id="6_avwit"]
+[ext_resource type="Script" path="res://Scripts/SolarSettings-linear.gd" id="7_wy4r1"]
+[ext_resource type="Texture2D" uid="uid://rusrd7tso0dx" path="res://UI/Home_UI/Главная.png" id="8_ixkv2"]
+[ext_resource type="Texture2D" uid="uid://beti5enfmciof" path="res://UI/Settings_UI/streamline_help-chat-2.png" id="9_fj86k"]
+[ext_resource type="Texture2D" uid="uid://co71y2s8ba0u0" path="res://UI/Home_UI/test.png" id="9_l4yta"]
+[ext_resource type="Script" path="res://Scenes/StreamlineHelp-chat-2.gd" id="10_u5p13"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_lfth1")
+
+[node name="Mainbach" type="Sprite2D" parent="."]
+position = Vector2(229, 447.5)
+scale = Vector2(1.42056, 1.11771)
+texture = ExtResource("1_0yqj0")
+
+[node name="NavBar" type="Sprite2D" parent="."]
+position = Vector2(215.5, 881)
+scale = Vector2(1.00701, 1)
+texture = ExtResource("2_bbi3j")
+
+[node name="TablerHome" type="Sprite2D" parent="NavBar"]
+position = Vector2(-144.488, -22)
+scale = Vector2(0.993041, 1)
+texture = ExtResource("3_tr1v1")
+
+[node name="MageRobot-wink" type="Sprite2D" parent="NavBar"]
+position = Vector2(52.134, 12)
+scale = Vector2(1.015, 1.022)
+texture = ExtResource("4_v2l0n")
+script = ExtResource("5_5nj5q")
+
+[node name="CoDroid_button" type="TextureButton" parent="NavBar/MageRobot-wink"]
+offset_left = -72.0
+offset_top = -36.0
+offset_right = 47.0
+offset_bottom = 37.0
+metadata/_edit_use_anchors_ = true
+
+[node name="SolarSettings-linear" type="Sprite2D" parent="NavBar"]
+position = Vector2(147.963, 12)
+scale = Vector2(0.933459, 0.9)
+texture = ExtResource("6_avwit")
+script = ExtResource("7_wy4r1")
+
+[node name="Settings_button" type="TextureButton" parent="NavBar/SolarSettings-linear"]
+offset_left = -49.0
+offset_top = -42.0
+offset_right = 62.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="StreamlineHelp-chat-2" type="Sprite2D" parent="NavBar"]
+position = Vector2(-45, 12)
+scale = Vector2(0.993041, 1)
+texture = ExtResource("9_fj86k")
+script = ExtResource("10_u5p13")
+
+[node name="helps_button" type="TextureButton" parent="NavBar/StreamlineHelp-chat-2"]
+offset_left = -43.0
+offset_top = -37.0
+offset_right = 40.0
+offset_bottom = 37.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Главная" type="Sprite2D" parent="."]
+position = Vector2(115, 41)
+texture = ExtResource("8_ixkv2")
+
+[node name="Test" type="Sprite2D" parent="."]
+position = Vector2(217, 175)
+texture = ExtResource("9_l4yta")
+
+[connection signal="pressed" from="NavBar/MageRobot-wink/CoDroid_button" to="NavBar/MageRobot-wink" method="_on_co_droid_button_pressed"]
+[connection signal="pressed" from="NavBar/SolarSettings-linear/Settings_button" to="NavBar/SolarSettings-linear" method="_on_settings_button_pressed"]
+[connection signal="pressed" from="NavBar/StreamlineHelp-chat-2/helps_button" to="NavBar/StreamlineHelp-chat-2" method="_on_helps_button_pressed"]
