@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://yhuqr4tk6j70" path="res://UI/Settings_UI/Настройки_text.png" id="7_ivrb2"]
 [ext_resource type="Texture2D" uid="uid://dfmdj7kbbepd" path="res://UI/Home_UI/mage_robot-wink.png" id="8_iv0d5"]
 [ext_resource type="Script" path="res://Scripts/MageRobot-wink.gd" id="9_leaeq"]
-[ext_resource type="Script" path="res://Scenes/StreamlineHelp-chat-2.gd" id="10_yy0ht"]
+[ext_resource type="Script" path="res://Scripts/StreamlineHelp-chat-2.gd" id="10_yy0ht"]
 
 [node name="Settings" type="Node2D"]
 

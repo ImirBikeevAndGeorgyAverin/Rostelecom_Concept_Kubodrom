@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dwgxwksr4vu51"]
+[gd_scene load_steps=18 format=3 uid="uid://dwgxwksr4vu51"]
 
 [ext_resource type="Texture2D" uid="uid://bmb46vpxmmv8l" path="res://UI/Mainbach.png" id="1_cbobh"]
 [ext_resource type="Script" path="res://Scripts/CoDroid.gd" id="1_cl65h"]
@@ -10,12 +10,13 @@
 [ext_resource type="Script" path="res://Scripts/SolarSettings-linear.gd" id="9_8rv3m"]
 [ext_resource type="Texture2D" uid="uid://beti5enfmciof" path="res://UI/Settings_UI/streamline_help-chat-2.png" id="9_ncrdv"]
 [ext_resource type="Texture2D" uid="uid://q87kodpllx04" path="res://UI/CoDroid_UI/icon_robot.png" id="9_wgu8y"]
-[ext_resource type="Script" path="res://Scenes/StreamlineHelp-chat-2.gd" id="10_21mco"]
+[ext_resource type="Script" path="res://Scripts/StreamlineHelp-chat-2.gd" id="10_21mco"]
 [ext_resource type="Texture2D" uid="uid://dej7f7lb4lehy" path="res://UI/CoDroid_UI/Привет, я CoDroid!.png" id="11_srbo5"]
 [ext_resource type="Texture2D" uid="uid://nr2jnc2r28hm" path="res://UI/CoDroid_UI/Чем тебе помочь_.png" id="12_mfd36"]
-[ext_resource type="Texture2D" uid="uid://c4fdw6onewc8s" path="res://UI/CoDroid_UI/test-1.png" id="13_3jxl0"]
-[ext_resource type="Texture2D" uid="uid://cx3fhd05jo6ov" path="res://UI/CoDroid_UI/test-2.png" id="14_5g7sc"]
-[ext_resource type="Texture2D" uid="uid://co5aoxrhmvne4" path="res://UI/CoDroid_UI/test.png" id="15_2i8v7"]
+[ext_resource type="Texture2D" uid="uid://c4fdw6onewc8s" path="res://UI/Home_UI/test-1.png" id="13_3jxl0"]
+[ext_resource type="Texture2D" uid="uid://v502pggu2d3j" path="res://UI/CoDroid_UI/advice.png" id="16_x0kb4"]
+[ext_resource type="Script" path="res://Scripts/raiting_group.gd" id="17_3jrub"]
+[ext_resource type="Texture2D" uid="uid://eo1bqlose18g" path="res://UI/CoDroid_UI/advise_popup.png" id="17_u86fn"]
 
 [node name="CoDroid" type="Node2D"]
 script = ExtResource("1_cl65h")
@@ -89,17 +90,55 @@ texture = ExtResource("12_mfd36")
 [node name="what_can_help" type="Node2D" parent="."]
 
 [node name="help_task" type="Sprite2D" parent="what_can_help"]
-position = Vector2(218, 416)
+position = Vector2(210, 297)
 texture = ExtResource("13_3jxl0")
 
-[node name="top_of_game" type="Sprite2D" parent="what_can_help"]
-position = Vector2(218, 529)
-texture = ExtResource("14_5g7sc")
+[node name="raiting_group" type="Node2D" parent="."]
+position = Vector2(218, 446)
+script = ExtResource("17_3jrub")
 
-[node name="raiting" type="Sprite2D" parent="what_can_help"]
-position = Vector2(218, 300)
-texture = ExtResource("15_2i8v7")
+[node name="Name" type="Label" parent="raiting_group"]
+offset_left = 270.0
+offset_top = -287.0
+offset_right = 387.0
+offset_bottom = -253.0
+
+[node name="Score" type="Label" parent="raiting_group"]
+offset_left = 388.0
+offset_top = -287.0
+offset_right = 508.0
+offset_bottom = -252.0
+
+[node name="Place" type="Label" parent="raiting_group"]
+offset_left = 508.0
+offset_top = -288.0
+offset_right = 626.0
+offset_bottom = -253.0
+
+[node name="Advice" type="Sprite2D" parent="."]
+position = Vector2(211, 410)
+texture = ExtResource("16_x0kb4")
+
+[node name="Advice_btn" type="TextureButton" parent="Advice"]
+offset_left = -213.0
+offset_top = -40.0
+offset_right = 219.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Advice/Advice_btn"]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 259.0
+offset_right = 308.0
+offset_bottom = 393.0
+autowrap_mode = 3
+
+[node name="AdvisePopup" type="Sprite2D" parent="."]
+position = Vector2(175.5, 714.25)
+scale = Vector2(1.6165, 1.55966)
+texture = ExtResource("17_u86fn")
 
 [connection signal="pressed" from="NavBar/TablerHome/Home_button" to="NavBar/TablerHome" method="_on_home_button_pressed"]
 [connection signal="pressed" from="NavBar/SolarSettings-linear2/Settings_button" to="NavBar/SolarSettings-linear2" method="_on_settings_button_pressed"]
 [connection signal="pressed" from="NavBar/StreamlineHelp-chat-2/helps_button" to="NavBar/StreamlineHelp-chat-2" method="_on_helps_button_pressed"]
+[connection signal="pressed" from="Advice/Advice_btn" to="." method="_on_advice_btn_pressed"]

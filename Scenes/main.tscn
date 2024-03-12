@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://5jhffnbf16ls"]
+[gd_scene load_steps=16 format=3 uid="uid://5jhffnbf16ls"]
 
 [ext_resource type="Texture2D" uid="uid://bmb46vpxmmv8l" path="res://UI/Mainbach.png" id="1_0yqj0"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_lfth1"]
@@ -11,7 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://rusrd7tso0dx" path="res://UI/Home_UI/Главная.png" id="8_ixkv2"]
 [ext_resource type="Texture2D" uid="uid://beti5enfmciof" path="res://UI/Settings_UI/streamline_help-chat-2.png" id="9_fj86k"]
 [ext_resource type="Texture2D" uid="uid://co71y2s8ba0u0" path="res://UI/Home_UI/test.png" id="9_l4yta"]
-[ext_resource type="Script" path="res://Scenes/StreamlineHelp-chat-2.gd" id="10_u5p13"]
+[ext_resource type="Script" path="res://Scripts/StreamlineHelp-chat-2.gd" id="10_u5p13"]
+[ext_resource type="Script" path="res://Scripts/Test.gd" id="13_8ovli"]
+[ext_resource type="Script" path="res://Scripts/Button.gd" id="13_ica1m"]
+[ext_resource type="Texture2D" uid="uid://b8sdfi3id1kkp" path="res://UI/Home_UI/raiting.png" id="14_y11kn"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_lfth1")
@@ -77,7 +80,35 @@ texture = ExtResource("8_ixkv2")
 [node name="Test" type="Sprite2D" parent="."]
 position = Vector2(217, 175)
 texture = ExtResource("9_l4yta")
+script = ExtResource("13_8ovli")
+
+[node name="go_to_play" type="TextureButton" parent="Test"]
+offset_left = -217.0
+offset_top = -43.0
+offset_right = 219.0
+offset_bottom = 43.0
+
+[node name="Button" type="Button" parent="."]
+offset_top = 683.0
+offset_right = 431.0
+offset_bottom = 750.0
+text = "Временная кнопка  ПЕРЕЙТИ В АДМИНКУ"
+script = ExtResource("13_ica1m")
+
+[node name="Raiting" type="Sprite2D" parent="."]
+position = Vector2(217, 290.5)
+scale = Vector2(1, 0.94186)
+texture = ExtResource("14_y11kn")
+
+[node name="raiting_button" type="TextureButton" parent="Raiting"]
+offset_left = -217.0
+offset_top = -43.0
+offset_right = 212.0
+offset_bottom = 43.0
 
 [connection signal="pressed" from="NavBar/MageRobot-wink/CoDroid_button" to="NavBar/MageRobot-wink" method="_on_co_droid_button_pressed"]
 [connection signal="pressed" from="NavBar/SolarSettings-linear/Settings_button" to="NavBar/SolarSettings-linear" method="_on_settings_button_pressed"]
 [connection signal="pressed" from="NavBar/StreamlineHelp-chat-2/helps_button" to="NavBar/StreamlineHelp-chat-2" method="_on_helps_button_pressed"]
+[connection signal="pressed" from="Test/go_to_play" to="Test" method="_on_go_to_play_pressed"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Raiting/raiting_button" to="." method="_on_raiting_button_pressed"]

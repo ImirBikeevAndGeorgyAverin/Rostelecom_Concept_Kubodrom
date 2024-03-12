@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://ch7i54ec5vnku"]
+
+[ext_resource type="Texture2D" uid="uid://dtggw3sdq5nuy" path="res://UI/Raiting_UI/Raiting.png" id="1_kfnpo"]
+[ext_resource type="Script" path="res://Scenes/raitings.gd" id="1_r46t4"]
+[ext_resource type="Texture2D" uid="uid://d17rsa7jnst5n" path="res://UI/Raiting_UI/monters.png" id="2_u6vfo"]
+[ext_resource type="Texture2D" uid="uid://bgqrvc3qo6oup" path="res://UI/Raiting_UI/oparators.png" id="3_e18n3"]
+[ext_resource type="Texture2D" uid="uid://5tv226lskjh6" path="res://UI/Raiting_UI/sysadmins.png" id="4_8qp0r"]
+[ext_resource type="Script" path="res://Scenes/Node2D.gd" id="6_wp1u4"]
+
+[node name="Raiting" type="Node2D"]
+script = ExtResource("1_r46t4")
+
+[node name="Raiting_background" type="Sprite2D" parent="."]
+position = Vector2(210, 1140.5)
+scale = Vector2(1, 0.981561)
+texture = ExtResource("1_kfnpo")
+
+[node name="TextureButton" type="TextureButton" parent="Raiting_background"]
+offset_left = -195.0
+offset_top = -1143.59
+offset_right = -155.0
+offset_bottom = -1103.59
+
+[node name="Oparators" type="Sprite2D" parent="."]
+position = Vector2(1121, 491)
+texture = ExtResource("3_e18n3")
+
+[node name="name_one_operators" type="Label" parent="Oparators"]
+anchors_preset = -1
+anchor_right = 0.713542
+anchor_bottom = 0.653903
+offset_left = -191.0
+offset_top = -152.0
+offset_right = -82.0
+offset_bottom = -92.0
+theme_override_font_sizes/font_size = 25
+metadata/_edit_use_anchors_ = true
+
+[node name="Monters" type="Sprite2D" parent="."]
+position = Vector2(209, 494)
+texture = ExtResource("2_u6vfo")
+
+[node name="Monters_label" type="Label" parent="Monters"]
+offset_left = -191.0
+offset_top = -157.0
+offset_right = 185.0
+offset_bottom = 336.0
+theme_override_font_sizes/font_size = 25
+
+[node name="Sysadmins" type="Sprite2D" parent="."]
+position = Vector2(660, 492)
+texture = ExtResource("4_8qp0r")
+
+[node name="sys_label" type="Label" parent="Sysadmins"]
+offset_left = -189.0
+offset_top = -157.0
+offset_right = 190.0
+offset_bottom = 344.0
+theme_override_font_sizes/font_size = 25
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("6_wp1u4")
+
+[connection signal="pressed" from="Raiting_background/TextureButton" to="." method="_on_texture_button_pressed"]

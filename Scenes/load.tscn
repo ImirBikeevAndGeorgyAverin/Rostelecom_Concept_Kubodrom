@@ -1,16 +1,66 @@
-[gd_scene load_steps=4 format=3 uid="uid://0vnc0apnpfsr"]
+[gd_scene load_steps=10 format=3 uid="uid://0vnc0apnpfsr"]
 
-[ext_resource type="Texture2D" uid="uid://ccgqo6h1b1ubo" path="res://UI/Loader_UI/Load_screen.png" id="1_pbkpg"]
+[ext_resource type="Script" path="res://Scripts/load.gd" id="1_bkm51"]
 [ext_resource type="Texture2D" uid="uid://ckyl72341u0a3" path="res://UI/Loader_UI/tabler_loader-2.png" id="2_ro3gs"]
 [ext_resource type="Script" path="res://Scripts/TablerLoader-2.gd" id="3_om0aa"]
+[ext_resource type="Texture2D" uid="uid://bmb46vpxmmv8l" path="res://UI/Mainbach.png" id="4_amxih"]
+[ext_resource type="Texture2D" uid="uid://ba62tpmrcq2la" path="res://UI/Home_UI/Компас успеха в Ростелекоме.png" id="5_sarl5"]
+[ext_resource type="Texture2D" uid="uid://c4fdw6onewc8s" path="res://UI/Home_UI/test-1.png" id="6_dabej"]
+[ext_resource type="Texture2D" uid="uid://cx3fhd05jo6ov" path="res://UI/Home_UI/test-2.png" id="7_sl6qy"]
+[ext_resource type="Texture2D" uid="uid://c8twp2xijqpdd" path="res://UI/test.png" id="8_da7a2"]
+[ext_resource type="Texture2D" uid="uid://id1essg8xjht" path="res://UI/Выберите профессию.png" id="9_jqomv"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_bkm51")
 
-[node name="LoadScreen" type="Sprite2D" parent="."]
-position = Vector2(215, 467)
-texture = ExtResource("1_pbkpg")
+[node name="Mainbach" type="Sprite2D" parent="."]
+position = Vector2(216, 464)
+texture = ExtResource("4_amxih")
+
+[node name="sysa" type="Sprite2D" parent="."]
+position = Vector2(691, 470)
+texture = ExtResource("6_dabej")
+
+[node name="sysa_btn" type="TextureButton" parent="sysa"]
+offset_left = -184.0
+offset_top = -44.0
+offset_right = 184.0
+offset_bottom = 40.0
+
+[node name="oper" type="Sprite2D" parent="."]
+position = Vector2(-222.5, 593)
+scale = Vector2(0.997222, 1)
+texture = ExtResource("7_sl6qy")
+
+[node name="oper_btn" type="TextureButton" parent="oper"]
+offset_left = -179.0
+offset_top = -41.0
+offset_right = 187.0
+offset_bottom = 47.0
+
+[node name="monter" type="Sprite2D" parent="."]
+position = Vector2(692, 719)
+texture = ExtResource("8_da7a2")
+
+[node name="monter_btn" type="TextureButton" parent="monter"]
+offset_left = -176.0
+offset_top = -38.0
+offset_right = 181.0
+offset_bottom = 40.0
+
+[node name="ВыберитеПрофессию" type="Sprite2D" parent="."]
+position = Vector2(192, -55)
+texture = ExtResource("9_jqomv")
 
 [node name="TablerLoader-2" type="Sprite2D" parent="."]
 position = Vector2(213, 460)
 texture = ExtResource("2_ro3gs")
 script = ExtResource("3_om0aa")
+
+[node name="КомпасУспехаВРостелекоме" type="Sprite2D" parent="."]
+position = Vector2(220, 284)
+texture = ExtResource("5_sarl5")
+
+[connection signal="pressed" from="sysa/sysa_btn" to="." method="_on_sysa_btn_pressed"]
+[connection signal="pressed" from="oper/oper_btn" to="." method="_on_oper_btn_pressed"]
+[connection signal="pressed" from="monter/monter_btn" to="." method="_on_monter_btn_pressed"]

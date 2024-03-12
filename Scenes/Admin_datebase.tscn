@@ -1,0 +1,86 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8hmhxvjrlmdp"]
+
+[ext_resource type="Script" path="res://Scripts/Admin_datebase.gd" id="1_5ual7"]
+
+[node name="AdminDatebase" type="Node2D"]
+script = ExtResource("1_5ual7")
+
+[node name="Create_table_m" type="Button" parent="."]
+offset_left = 13.0
+offset_top = 22.0
+offset_right = 415.0
+offset_bottom = 56.0
+text = "Создать таблицу Монтеров"
+
+[node name="Create_table_s" type="Button" parent="."]
+offset_left = 15.0
+offset_top = 73.0
+offset_right = 419.0
+offset_bottom = 107.0
+text = "Создать таблицу Сисадминов"
+
+[node name="Create_table_o" type="Button" parent="."]
+offset_left = 18.0
+offset_top = 122.0
+offset_right = 420.0
+offset_bottom = 156.0
+text = "Создать таблицу Операторов"
+
+[node name="Insert_data" type="Button" parent="."]
+offset_left = 16.0
+offset_top = 405.0
+offset_right = 418.0
+offset_bottom = 439.0
+text = "Вставить данные"
+
+[node name="Back" type="Button" parent="."]
+offset_left = 13.0
+offset_top = 886.0
+offset_right = 419.0
+offset_bottom = 920.0
+text = "Назад"
+
+[node name="Name_edit" type="TextEdit" parent="."]
+offset_left = 99.0
+offset_top = 204.0
+offset_right = 402.0
+offset_bottom = 239.0
+
+[node name="Name" type="Label" parent="."]
+offset_left = 32.0
+offset_top = 207.0
+offset_right = 79.0
+offset_bottom = 230.0
+text = "Имя"
+
+[node name="Score_edit" type="TextEdit" parent="."]
+offset_left = 111.0
+offset_top = 281.0
+offset_right = 398.0
+offset_bottom = 316.0
+
+[node name="proffesion_edit" type="TextEdit" parent="."]
+offset_left = 146.0
+offset_top = 340.0
+offset_right = 398.0
+offset_bottom = 375.0
+
+[node name="Score" type="Label" parent="."]
+offset_left = 25.0
+offset_top = 283.0
+offset_right = 92.0
+offset_bottom = 306.0
+text = "Рейтинг"
+
+[node name="proffesion" type="Label" parent="."]
+offset_left = 28.0
+offset_top = 345.0
+offset_right = 95.0
+offset_bottom = 368.0
+text = "Проффесия"
+
+[connection signal="pressed" from="Create_table_m" to="." method="_on_create_table_m_pressed"]
+[connection signal="pressed" from="Create_table_s" to="." method="_on_create_table_s_pressed"]
+[connection signal="pressed" from="Create_table_o" to="." method="_on_create_table_o_pressed"]
+[connection signal="pressed" from="Insert_data" to="." method="_on_insert_data_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
